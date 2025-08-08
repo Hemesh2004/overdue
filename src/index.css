@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 800px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1;
+}
+
+.pay-all {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.total-fine {
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+}
+
+.total-fine h3 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.total-fine p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.fine-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fine-table th, .fine-table td {
+  padding: 14px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.pay-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
