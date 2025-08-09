@@ -1,48 +1,49 @@
 import './App.css';
 
-interface OverdueItem {
-  id: number;
-  name: string;
-  dueDate: string;
-  daysOverdue: number;
-  fineAmount: number;
-}
-
 function App() {
-  const overdueItems: OverdueItem[] = [
-    { id: 1, name: 'Book A', dueDate: '2025-08-05', daysOverdue: 4, fineAmount: 10 },
-    { id: 2, name: 'Book B', dueDate: '2025-08-01', daysOverdue: 8, fineAmount: 15 },
-    { id: 3, name: 'Book C', dueDate: '2025-07-28', daysOverdue: 12, fineAmount: 20 },
+  const fines = [
+    { book: 'Book 1', days: 5, fine: 10 },
+    { book: 'Book 2', days: 8, fine: 15 },
+    { book: 'Book 3', days: 2, fine: 5 },
   ];
 
-  const totalFine = overdueItems.reduce((sum, item) => sum + item.fineAmount, 0);
+  const totalFine = fines.reduce((sum, f) => sum + f.fine, 0);
 
   return (
     <div className="app-container">
-      <div className="total-fine">
-        <h3>Total Fine</h3>
-        <p className="amount">${totalFine}</p>
+      {/* Header */}
+      <div className="header">
+        <img
+          src="https://via.placeholder.com/60"
+          alt="avatar"
+          className="avatar"
+        />
+        <div className="name">John Doe</div>
+        <button className="pay-all">Pay All</button>
       </div>
 
-      <table className="overdue-table">
+      {/* Total Fine */}
+      <div className="total-fine">
+        <h3>₹{totalFine}</h3>
+        <p>Total Fine</p>
+      </div>
+
+      {/* Table */}
+      <table className="fine-table">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Item Name</th>
-            <th>Due Date</th>
+            <th>Book Name</th>
             <th>Days Overdue</th>
-            <th>Fine Amount</th> {/* NEW COLUMN */}
-            <th>Pay Now</th>
+            <th>Fine Amount</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          {overdueItems.map(item => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.dueDate}</td>
-              <td>{item.daysOverdue}</td>
-              <td>${item.fineAmount}</td> {/* NEW DATA */}
+          {fines.map((f, idx) => (
+            <tr key={idx}>
+              <td>{f.book}</td>
+              <td>{f.days}</td>
+              <td>₹{f.fine}</td>
               <td>
                 <button className="pay-btn">Pay Now</button>
               </td>
