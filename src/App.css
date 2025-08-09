@@ -1,42 +1,53 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.app-container {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: white;
+}
+
+.total-fine {
+  background: #2563eb;
+  color: white;
   text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.total-fine h3 {
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.amount {
+  font-size: 28px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.overdue-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.card {
-  padding: 2em;
+.overdue-table th, .overdue-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
 }
 
-.read-the-docs {
-  color: #888;
+.overdue-table th {
+  background-color: #f0f0f0;
+}
+
+.overdue-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.pay-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
